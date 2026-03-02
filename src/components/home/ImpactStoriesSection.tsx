@@ -8,18 +8,21 @@ const stories = [
     excerpt: "Over 200 children screened in the first month of our new community partnership program.",
     date: "Feb 15, 2026",
     category: "Programs",
+    image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=400&fit=crop",
   },
   {
     title: "Teacher Training Workshop Success",
     excerpt: "50 teachers trained on recognizing and supporting dyslexic students in mainstream classrooms.",
     date: "Jan 28, 2026",
     category: "Education",
+    image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=600&h=400&fit=crop",
   },
   {
     title: "International Dyslexia Day Celebrations",
     excerpt: "Tanzania joins the global community in raising awareness and celebrating neurodiversity.",
     date: "Jan 10, 2026",
     category: "Events",
+    image: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&h=400&fit=crop",
   },
 ];
 
@@ -44,17 +47,33 @@ const ImpactStoriesSection = () => {
         <div className="grid md:grid-cols-3 gap-6">
           {stories.map((story, i) => (
             <ScrollReveal key={story.title} delay={i * 0.15}>
-              <article className="bg-card rounded-2xl overflow-hidden border border-border card-hover h-full flex flex-col">
-                <div className="h-2 bg-gradient-to-r from-primary to-sky-blue" />
-                <div className="p-6 flex flex-col flex-1">
-                  <span className="inline-block text-xs font-semibold text-primary bg-primary/10 rounded-full px-3 py-1 mb-4 w-fit">
+              <article className="bg-card rounded-2xl overflow-hidden border border-border card-hover h-full flex flex-col group relative">
+                {/* Decorative corner accent */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/5 to-transparent rounded-bl-3xl z-10 pointer-events-none" />
+                
+                {/* Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={story.image}
+                    alt={story.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card/60 to-transparent" />
+                  <span className="absolute bottom-3 left-4 inline-block text-xs font-semibold text-primary-foreground bg-primary rounded-full px-3 py-1">
                     {story.category}
                   </span>
-                  <h3 className="text-lg font-bold text-foreground mb-2 leading-snug">{story.title}</h3>
+                </div>
+
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="text-lg font-bold text-foreground mb-2 leading-snug group-hover:text-primary transition-colors">{story.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">{story.excerpt}</p>
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                    <Calendar size={14} />
-                    <span>{story.date}</span>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <Calendar size={14} />
+                      <span>{story.date}</span>
+                    </div>
+                    <ArrowRight size={16} className="text-muted-foreground group-hover:text-primary transition-colors" />
                   </div>
                 </div>
               </article>

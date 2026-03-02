@@ -1,5 +1,6 @@
 import { BookOpen, Users, GraduationCap, HeartHandshake } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import PageHero from "@/components/PageHero";
 
 const projects = [
   {
@@ -30,31 +31,25 @@ const projects = [
 
 const Projects = () => {
   return (
-    <main className="pt-20">
-      <section className="section-padding bg-muted/50">
-        <div className="container-wide">
-          <ScrollReveal>
-            <div className="max-w-3xl">
-              <span className="text-sm font-semibold text-primary uppercase tracking-wider">Our Impact</span>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-foreground mt-2 mb-6">
-                Projects & <span className="text-secondary">Initiatives</span>
-              </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Discover the programs that are making a real difference for dyslexic children and families in Tanzania.
-              </p>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+    <main>
+      <PageHero
+        badge="Our Impact"
+        title={<>Projects & <span className="text-secondary">Initiatives</span></>}
+        description="Discover the programs that are making a real difference for dyslexic children and families in Tanzania."
+      />
 
       <section className="section-padding">
         <div className="container-wide">
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, i) => (
               <ScrollReveal key={project.title} delay={i * 0.1}>
-                <div className="bg-card rounded-2xl p-8 border border-border card-hover h-full">
-                  <div className="flex items-start gap-5">
-                    <div className="bg-primary/10 w-14 h-14 rounded-xl flex items-center justify-center shrink-0">
+                <div className="bg-card rounded-2xl p-8 border border-border card-hover h-full relative overflow-hidden group">
+                  {/* Decorative corner */}
+                  <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full bg-primary/5 group-hover:bg-primary/10 transition-colors duration-500" />
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-sky-blue scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+
+                  <div className="flex items-start gap-5 relative z-10">
+                    <div className="bg-primary/10 w-14 h-14 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">
                       <project.icon size={24} className="text-primary" />
                     </div>
                     <div>

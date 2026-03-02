@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
 import ScrollReveal from "@/components/ScrollReveal";
+import PageHero from "@/components/PageHero";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -22,22 +23,12 @@ const Contact = () => {
   };
 
   return (
-    <main className="pt-20">
-      <section className="section-padding bg-muted/50">
-        <div className="container-wide">
-          <ScrollReveal>
-            <div className="max-w-3xl">
-              <span className="text-sm font-semibold text-primary uppercase tracking-wider">Get in Touch</span>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-foreground mt-2 mb-6">
-                Contact <span className="text-secondary">Us</span>
-              </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Have questions or want to get involved? We'd love to hear from you.
-              </p>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+    <main>
+      <PageHero
+        badge="Get in Touch"
+        title={<>Contact <span className="text-secondary">Us</span></>}
+        description="Have questions or want to get involved? We'd love to hear from you."
+      />
 
       <section className="section-padding">
         <div className="container-wide">
@@ -93,39 +84,28 @@ const Contact = () => {
                 <div>
                   <h3 className="text-lg font-bold text-foreground mb-4">Contact Information</h3>
                   <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <div className="bg-primary/10 w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
-                        <Mail size={18} className="text-primary" />
+                    {[
+                      { icon: Mail, label: "Email", value: "info@dyslexiatanzania.org" },
+                      { icon: Phone, label: "Phone", value: "+255 123 456 789" },
+                      { icon: MapPin, label: "Location", value: "Dar es Salaam, Tanzania" },
+                    ].map((item) => (
+                      <div key={item.label} className="flex items-start gap-3 group">
+                        <div className="bg-primary/10 w-10 h-10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">
+                          <item.icon size={18} className="text-primary" />
+                        </div>
+                        <div>
+                          <p className="text-sm font-medium text-foreground">{item.label}</p>
+                          <p className="text-sm text-muted-foreground">{item.value}</p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="text-sm font-medium text-foreground">Email</p>
-                        <p className="text-sm text-muted-foreground">info@dyslexiatanzania.org</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="bg-primary/10 w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
-                        <Phone size={18} className="text-primary" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium text-foreground">Phone</p>
-                        <p className="text-sm text-muted-foreground">+255 123 456 789</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="bg-primary/10 w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
-                        <MapPin size={18} className="text-primary" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium text-foreground">Location</p>
-                        <p className="text-sm text-muted-foreground">Dar es Salaam, Tanzania</p>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
 
-                <div className="bg-secondary/10 rounded-2xl p-6 border border-secondary/20">
-                  <h3 className="text-lg font-bold text-foreground mb-2">Become a Member</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                <div className="bg-secondary/10 rounded-2xl p-6 border border-secondary/20 relative overflow-hidden">
+                  <div className="absolute -top-6 -right-6 w-16 h-16 rounded-full bg-secondary/10" />
+                  <h3 className="text-lg font-bold text-foreground mb-2 relative">Become a Member</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed relative">
                     Join our growing community of advocates, educators, and supporters committed to equal learning opportunities for all.
                   </p>
                 </div>

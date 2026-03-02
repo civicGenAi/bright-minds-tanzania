@@ -1,5 +1,6 @@
 import { Target, Eye, Heart, Users } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import PageHero from "@/components/PageHero";
 import founderImg from "@/assets/founder.jpg";
 
 const values = [
@@ -11,25 +12,12 @@ const values = [
 
 const About = () => {
   return (
-    <main className="pt-20">
-      {/* Hero */}
-      <section className="section-padding bg-muted/50">
-        <div className="container-wide">
-          <ScrollReveal>
-            <div className="max-w-3xl">
-              <span className="text-sm font-semibold text-primary uppercase tracking-wider">About Us</span>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-foreground mt-2 mb-6">
-                Our Mission for <span className="text-secondary">Equal Learning</span>
-              </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Dyslexia Tanzania was founded in 2017 by Caudence Ayoti with a single mission: to ensure that no child 
-                in Tanzania is denied their right to learn because of dyslexia. We work tirelessly to raise awareness, 
-                train educators, and provide support to families.
-              </p>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+    <main>
+      <PageHero
+        badge="About Us"
+        title={<>Our Mission for <span className="text-secondary">Equal Learning</span></>}
+        description="Dyslexia Tanzania was founded in 2017 by Caudence Ayoti with a single mission: to ensure that no child in Tanzania is denied their right to learn because of dyslexia."
+      />
 
       {/* Values */}
       <section className="section-padding">
@@ -42,7 +30,8 @@ const About = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v, i) => (
               <ScrollReveal key={v.title} delay={i * 0.1}>
-                <div className="bg-card rounded-2xl p-6 border border-border card-hover text-center h-full">
+                <div className="bg-card rounded-2xl p-6 border border-border card-hover text-center h-full relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-sky-blue scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                   <div className="bg-primary/10 w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <v.icon size={24} className="text-primary" />
                   </div>
