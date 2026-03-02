@@ -2,6 +2,7 @@ import HeroSection from "@/components/home/HeroSection";
 import WhatIsDyslexiaSection from "@/components/home/WhatIsDyslexiaSection";
 import ActionHubSection from "@/components/home/ActionHubSection";
 import ImpactStoriesSection from "@/components/home/ImpactStoriesSection";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
 import FounderSection from "@/components/home/FounderSection";
 import CTASection from "@/components/home/CTASection";
 
@@ -12,6 +13,7 @@ const Index = () => {
       <WhatIsDyslexiaSection />
       <ActionHubSection />
       <ImpactStoriesSection />
+      <TestimonialsSection />
       <FounderSection />
       <CTASection />
     </main>
