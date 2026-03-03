@@ -1,12 +1,22 @@
 import ScrollReveal from "@/components/ScrollReveal";
+import cadetAcademy from "@/assets/partners/cadet-academy.png";
+import dewDrops from "@/assets/partners/dew-drops.png";
+import africaDyslexicsUnited from "@/assets/partners/africa-dyslexics-united.png";
+import nourishedMind from "@/assets/partners/nourished-mind.png";
+import dyslexiaHelpAfrica from "@/assets/partners/dyslexia-help-africa.png";
+import africaDyslexiaOrg from "@/assets/partners/africa-dyslexia-org.png";
+import ableFoundation from "@/assets/partners/able-foundation.png";
+import dyslexiaOrgKenya from "@/assets/partners/dyslexia-org-kenya.png";
 
 const partners = [
-  { name: "UNICEF Tanzania", initials: "UT" },
-  { name: "Ministry of Education", initials: "ME" },
-  { name: "University of Dar es Salaam", initials: "UD" },
-  { name: "British Council", initials: "BC" },
-  { name: "Aga Khan Foundation", initials: "AK" },
-  { name: "Tanzania Education Authority", initials: "TE" },
+  { name: "C.A.D.E.T. Academy", logo: cadetAcademy },
+  { name: "Dew Drops Community Centre", logo: dewDrops },
+  { name: "Africa Dyslexics United", logo: africaDyslexicsUnited },
+  { name: "Nourished Mind", logo: nourishedMind },
+  { name: "Dyslexia Help Africa", logo: dyslexiaHelpAfrica },
+  { name: "Africa Dyslexia Organisation", logo: africaDyslexiaOrg },
+  { name: "Able Foundation", logo: ableFoundation },
+  { name: "Dyslexia Organisation Kenya", logo: dyslexiaOrgKenya },
 ];
 
 const CollaboratorsSection = () => {
@@ -27,14 +37,17 @@ const CollaboratorsSection = () => {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-6">
           {partners.map((partner, i) => (
             <ScrollReveal key={partner.name} delay={i * 0.08}>
-              <div className="bg-card rounded-2xl border border-border p-6 flex flex-col items-center justify-center card-hover h-32 group relative overflow-hidden">
+              <div className="bg-card rounded-2xl border border-border p-6 flex flex-col items-center justify-center card-hover h-40 group relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-sky-blue scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/15 transition-colors">
-                  <span className="text-lg font-bold text-primary">{partner.initials}</span>
-                </div>
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="w-20 h-20 object-contain mb-3 group-hover:scale-110 transition-transform duration-300"
+                  loading="lazy"
+                />
                 <span className="text-xs font-medium text-muted-foreground text-center leading-tight">
                   {partner.name}
                 </span>
