@@ -4,6 +4,7 @@ import { toast } from "sonner";
 import ScrollReveal from "@/components/ScrollReveal";
 import PageHero from "@/components/PageHero";
 import contactCartoon from "@/assets/nav/contactus-cartoon.png";
+import SEO from "@/components/SEO";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -25,11 +26,16 @@ const Contact = () => {
 
   return (
     <main>
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Dyslexia Tanzania. Whether you have questions, want to volunteer, or need support, we are here to help."
+      />
       <PageHero
         badge="Get in Touch"
         title={<>Contact <span className="text-secondary">Us</span></>}
         description="Have questions or want to get involved? We'd love to hear from you."
         backgroundImage={contactCartoon}
+        imageAlt="Illustration for Contact Us"
       />
 
       <section className="section-padding">
@@ -89,7 +95,7 @@ const Contact = () => {
                     {[
                       { icon: Mail, label: "Email", value: "info@dyslexiatanzania.org" },
                       { icon: Phone, label: "Phone", value: "+255 688 535 848" },
-                      { icon: MapPin, label: "Location", value: "Tanzanite street, House Number 13, Arusha, Tanzania." },
+                      { icon: MapPin, label: "Location", value: "Arusha, Tanzania" },
                     ].map((item) => (
                       <div key={item.label} className="flex items-start gap-3 group">
                         <div className="bg-primary/10 w-10 h-10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">

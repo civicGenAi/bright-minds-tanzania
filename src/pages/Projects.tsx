@@ -5,6 +5,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import PageHero from "@/components/PageHero";
 import projectsCartoon from "@/assets/nav/projects-cartoon.png";
 import { motion, AnimatePresence, useSpring, useTransform, motionValue } from "framer-motion";
+import SEO from "@/components/SEO";
 
 const categories = ["All", "Screening", "Training", "Support", "Advocacy"];
 
@@ -95,11 +96,16 @@ const Projects = () => {
 
   return (
     <main className="min-h-screen bg-background">
+      <SEO
+        title="Projects"
+        description="Discover our current projects and initiatives aimed at improving dyslexia screening, teacher training, and policy advocacy in Tanzania."
+      />
       <PageHero
         badge="Our Impact"
         title={<>Projects & <span className="text-secondary">Initiatives</span></>}
         description="Driven by purpose, scaled by community. Discover how we're reshaping education."
         backgroundImage={projectsCartoon}
+        imageAlt="Illustration of educational projects and growth"
       />
 
       <section className="section-padding relative">
@@ -111,8 +117,8 @@ const Projects = () => {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`px-8 py-3 rounded-2xl text-sm font-black uppercase tracking-widest transition-all ${activeCategory === cat
-                    ? "bg-primary text-primary-foreground shadow-xl shadow-primary/20 -translate-y-1"
-                    : "bg-card text-muted-foreground hover:bg-muted"
+                  ? "bg-primary text-primary-foreground shadow-xl shadow-primary/20 -translate-y-1"
+                  : "bg-card text-muted-foreground hover:bg-muted"
                   }`}
               >
                 {cat}
@@ -137,7 +143,7 @@ const Projects = () => {
                     <div className="relative h-72 overflow-hidden">
                       <img
                         src={project.image}
-                        alt={project.title}
+                        alt={`Project thumbnail for ${project.title} - ${project.category}`}
                         className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />

@@ -6,6 +6,7 @@ import founderImg from "@/assets/founder.jpg";
 import heroChildrenImg from "@/assets/hero-children.jpg";
 import aboutCartoon from "@/assets/nav/aboutus-cartoon.png";
 import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 
 const values = [
   { icon: Heart, title: "Equality", description: "Every child deserves equal access to education regardless of learning differences.", color: "text-red-500", bg: "bg-red-50" },
@@ -25,11 +26,16 @@ const milestones = [
 const About = () => {
   return (
     <main className="bg-background overflow-hidden">
+      <SEO
+        title="About Us"
+        description="Learn about Dyslexia Tanzania's mission, vision, and values. We are committed to inclusive education and support for neurodiverse learners."
+      />
       <PageHero
         badge="Who We Are"
         title={<>Bridging the Gap <span className="text-secondary">for Dyslexic Learners</span></>}
         description="We are a community-driven organization dedicated to transforming the educational landscape for children with learning differences in Tanzania."
         backgroundImage={aboutCartoon}
+        imageAlt="Illustration of community support for dyslexia"
       />
 
       {/* Asymmetric Mission & Vision */}
@@ -39,9 +45,9 @@ const About = () => {
             <div className="lg:col-span-7">
               <ScrollReveal direction="left">
                 <div className="relative">
-                  <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl" />
-                  <div className="bg-card border border-border/50 rounded-[3rem] p-10 md:p-14 shadow-2xl relative overflow-hidden group">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/10 transition-colors" />
+                  <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl hidden md:block" />
+                  <div className="bg-card border border-border/50 rounded-[2rem] md:rounded-[3rem] p-8 md:p-14 shadow-2xl relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/10 transition-colors hidden md:block" />
                     <Target size={40} className="text-primary mb-6" />
                     <h2 className="text-3xl md:text-4xl font-black mb-6 leading-tight">
                       Our <span className="text-primary">Mission</span>
@@ -157,7 +163,7 @@ const About = () => {
                 <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5]">
                   <img
                     src={founderImg}
-                    alt="Caudence Ayoti"
+                    alt="Caudence Ayoti - Founder of Dyslexia Tanzania"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
                   <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black via-black/20 to-transparent">

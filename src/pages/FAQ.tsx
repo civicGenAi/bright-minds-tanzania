@@ -10,6 +10,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { motion, AnimatePresence } from "framer-motion";
+import SEO from "@/components/SEO";
 
 const categories = ["All", "About Dyslexia", "Our Work", "Support Us"];
 
@@ -69,17 +70,22 @@ const FAQ = () => {
 
   return (
     <main className="min-h-screen bg-background">
+      <SEO
+        title="FAQ"
+        description="Find answers to frequently asked questions about dyslexia, our screening programs, and how you can support our mission in Tanzania."
+      />
       <PageHero
         badge="Questions & Answers"
         title={<>Frequently Asked <span className="text-secondary">Questions</span></>}
         description="Empowering you with knowledge about dyslexia and how we're making a difference."
         backgroundImage={faqCartoon}
+        imageAlt="Illustration for Frequently Asked Questions"
       />
 
       <section className="section-padding relative overflow-hidden">
         {/* Background Decorative Elements */}
-        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl pointer-events-none hidden md:block" />
+        <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl pointer-events-none hidden md:block" />
 
         <div className="container-wide relative">
           <div className="max-w-4xl mx-auto">
@@ -108,8 +114,8 @@ const FAQ = () => {
                       key={category}
                       onClick={() => setActiveCategory(category)}
                       className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${activeCategory === category
-                          ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25 translate-y-[-2px]"
-                          : "bg-muted hover:bg-muted/80 text-muted-foreground"
+                        ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25 translate-y-[-2px]"
+                        : "bg-muted hover:bg-muted/80 text-muted-foreground"
                         }`}
                     >
                       {category}

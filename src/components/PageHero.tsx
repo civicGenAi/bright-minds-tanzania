@@ -6,15 +6,18 @@ interface PageHeroProps {
   title: ReactNode;
   description: string;
   backgroundImage?: string;
+  imageAlt?: string;
 }
 
-const PageHero = ({ badge, title, description, backgroundImage }: PageHeroProps) => {
+const PageHero = ({ badge, title, description, backgroundImage, imageAlt }: PageHeroProps) => {
   return (
     <section className="relative pt-20 overflow-hidden">
       {/* Background image */}
       {backgroundImage && (
         <div
           className="absolute inset-0 pointer-events-none"
+          role="img"
+          aria-label={imageAlt || "Background decorative image"}
           style={{
             backgroundImage: `url(${backgroundImage})`,
             backgroundSize: "cover",
@@ -29,8 +32,8 @@ const PageHero = ({ badge, title, description, backgroundImage }: PageHeroProps)
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-primary/5 blur-3xl -translate-y-1/2 translate-x-1/2" />
         <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-secondary/5 blur-3xl translate-y-1/2 -translate-x-1/2" />
-        {/* Dot grid */}
-        <div className="absolute top-32 right-[10%] grid grid-cols-4 gap-3 opacity-[0.07]">
+        {/* Dot grid - Hidden on mobile for cleaner view */}
+        <div className="absolute top-32 right-[10%] hidden md:grid grid-cols-4 gap-3 opacity-[0.07]">
           {Array.from({ length: 16 }).map((_, i) => (
             <div key={i} className="w-2 h-2 rounded-full bg-primary" />
           ))}

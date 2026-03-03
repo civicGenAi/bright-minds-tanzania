@@ -4,6 +4,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import PageHero from "@/components/PageHero";
 import newsCartoon from "@/assets/nav/news-cartoon.png";
 import { motion, AnimatePresence } from "framer-motion";
+import SEO from "@/components/SEO";
 
 const categories = ["All", "Programs", "Education", "Events", "Research", "Reports"];
 
@@ -92,11 +93,16 @@ const News = () => {
 
   return (
     <main className="min-h-screen bg-background">
+      <SEO
+        title="News & Insights"
+        description="Stay updated with the latest news, research findings, and community stories from Dyslexia Tanzania."
+      />
       <PageHero
         badge="Stay Updated"
         title={<>News & <span className="text-secondary">Insights</span></>}
         description="Exploring the latest stories, research, and impact of our work across Tanzania."
         backgroundImage={newsCartoon}
+        imageAlt="Illustration of news and community insights"
       />
 
       <section className="section-padding relative">
@@ -141,7 +147,7 @@ const News = () => {
                     <div className="relative h-64 overflow-hidden">
                       <img
                         src={article.image}
-                        alt={article.title}
+                        alt={`Article thumbnail: ${article.title}`}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-10 transition-opacity" />

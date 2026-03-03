@@ -58,7 +58,7 @@ const Navbar = () => {
             >
               <img
                 src={logo}
-                alt="Dyslexia Tanzania"
+                alt="Dyslexia Tanzania - Empowering Neurodiverse Learners"
                 className={`transition-all duration-500 ${isScrolled ? "h-8 md:h-10" : "h-11 md:h-13"}`}
               />
             </motion.div>
