@@ -9,6 +9,7 @@ const navItems = [
   { label: "About Us", path: "/about" },
   { label: "Projects", path: "/projects" },
   { label: "News", path: "/news" },
+  { label: "FAQ", path: "/faq" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -39,7 +40,7 @@ const Navbar = () => {
             </Link>
           ))}
           <Link
-            to="/contact"
+            to="/donate"
             className="inline-flex items-center justify-center rounded-lg bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground transition-all hover:opacity-90 hover:shadow-lg"
           >
             Donate Now
@@ -81,7 +82,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <Link
-                to="/contact"
+                to="/donate"
                 onClick={() => setIsOpen(false)}
                 className="block w-full text-center rounded-lg bg-secondary px-5 py-3 text-sm font-semibold text-secondary-foreground"
               >
