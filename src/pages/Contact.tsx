@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
 import ScrollReveal from "@/components/ScrollReveal";
 import PageHero from "@/components/PageHero";
-import contactCartoon from "@/assets/nav/contactus-cartoon(1).png";
+import contactCartoon from "@/assets/nav/contactus-cartoon.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
