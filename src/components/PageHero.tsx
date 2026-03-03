@@ -5,11 +5,26 @@ interface PageHeroProps {
   badge: string;
   title: ReactNode;
   description: string;
+  backgroundImage?: string;
 }
 
-const PageHero = ({ badge, title, description }: PageHeroProps) => {
+const PageHero = ({ badge, title, description, backgroundImage }: PageHeroProps) => {
   return (
     <section className="relative pt-20 overflow-hidden">
+      {/* Background image */}
+      {backgroundImage && (
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center right",
+            backgroundRepeat: "no-repeat",
+            opacity: 0.12,
+          }}
+        />
+      )}
+
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-primary/5 blur-3xl -translate-y-1/2 translate-x-1/2" />

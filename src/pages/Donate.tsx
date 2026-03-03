@@ -3,6 +3,7 @@ import { Heart, CreditCard, Building2, Smartphone, ArrowRight, CheckCircle2 } fr
 import { toast } from "sonner";
 import ScrollReveal from "@/components/ScrollReveal";
 import PageHero from "@/components/PageHero";
+import donateCartoon from "@/assets/nav/donate-cartoon.png";
 
 const donationAmounts = [10, 25, 50, 100, 250, 500];
 
@@ -51,6 +52,7 @@ const Donate = () => {
         badge="Make a Difference"
         title={<>Support Our <span className="text-secondary">Mission</span></>}
         description="Your donation directly supports dyslexia screening programs, teacher training, and educational resources across Tanzania."
+        backgroundImage={donateCartoon}
       />
 
       {/* Quick Donate */}
@@ -71,11 +73,10 @@ const Donate = () => {
                     <button
                       key={amount}
                       onClick={() => { setSelectedAmount(amount); setCustomAmount(""); }}
-                      className={`rounded-xl border-2 py-4 text-lg font-bold transition-all ${
-                        selectedAmount === amount
+                      className={`rounded-xl border-2 py-4 text-lg font-bold transition-all ${selectedAmount === amount
                           ? "border-primary bg-primary/10 text-primary"
                           : "border-border bg-card text-foreground hover:border-primary/40"
-                      }`}
+                        }`}
                     >
                       ${amount}
                     </button>

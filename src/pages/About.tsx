@@ -4,6 +4,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import PageHero from "@/components/PageHero";
 import founderImg from "@/assets/founder.jpg";
 import heroChildrenImg from "@/assets/hero-children.jpg";
+import aboutCartoon from "@/assets/nav/aboutus-cartoon.png";
 
 const values = [
   { icon: Heart, title: "Equality", description: "Every child deserves equal access to education regardless of learning differences." },
@@ -27,6 +28,7 @@ const About = () => {
         badge="About Us"
         title={<>Extend a Supportive Hand <span className="text-secondary">to Them</span></>}
         description="Join our community to make a positive impact on the lives of dyslexic children."
+        backgroundImage={aboutCartoon}
       />
 
       {/* Mission & Vision */}
@@ -140,11 +142,11 @@ const About = () => {
               <span className="text-sm font-semibold text-primary uppercase tracking-wider">Our Founder</span>
               <h2 className="text-3xl font-extrabold text-foreground mt-2 mb-4">Caudence Ayoti</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Caudence Ayoti founded Dyslexia Tanzania driven by a deep belief that every child can succeed when given 
+                Caudence Ayoti founded Dyslexia Tanzania driven by a deep belief that every child can succeed when given
                 the right tools. Her work has been instrumental in bringing dyslexia awareness to national discourse.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Under her leadership, the organization has screened hundreds of children, trained dozens of teachers, 
+                Under her leadership, the organization has screened hundreds of children, trained dozens of teachers,
                 and partnered with both local and international organizations to drive change.
               </p>
             </ScrollReveal>

@@ -1,6 +1,7 @@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import PageHero from "@/components/PageHero";
+import faqCartoon from "@/assets/nav/faq-cartoon.png";
 import {
   Accordion,
   AccordionContent,
@@ -50,6 +51,7 @@ const FAQ = () => {
         badge="Questions & Answers"
         title={<>Frequently Asked <span className="text-secondary">Questions</span></>}
         description="Get to know the answers to common questions asked about dyslexia and our organization."
+        backgroundImage={faqCartoon}
       />
 
       {/* FAQ Accordion */}

@@ -2,6 +2,7 @@ import { BookOpen, Users, GraduationCap, HeartHandshake, ArrowRight } from "luci
 import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
 import PageHero from "@/components/PageHero";
+import projectsCartoon from "@/assets/nav/projects-cartoon.png";
 
 const projects = [
   {
@@ -41,6 +42,7 @@ const Projects = () => {
         badge="Our Impact"
         title={<>Projects & <span className="text-secondary">Initiatives</span></>}
         description="Discover the programs that are making a real difference for dyslexic children and families in Tanzania."
+        backgroundImage={projectsCartoon}
       />
 
       <section className="section-padding">

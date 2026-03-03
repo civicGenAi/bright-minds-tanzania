@@ -1,6 +1,7 @@
 import { Calendar, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import PageHero from "@/components/PageHero";
+import newsCartoon from "@/assets/nav/news-cartoon.png";
 
 const articles = [
   {
@@ -47,6 +48,7 @@ const News = () => {
         badge="Stay Updated"
         title={<>News & <span className="text-secondary">Insights</span></>}
         description="The latest updates, stories, and insights from our work across Tanzania."
+        backgroundImage={newsCartoon}
       />
 
       <section className="section-padding">

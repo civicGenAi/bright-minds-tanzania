@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
 import ScrollReveal from "@/components/ScrollReveal";
 import PageHero from "@/components/PageHero";
+import contactCartoon from "@/assets/nav/contactus-cartoon(1).png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -28,6 +29,7 @@ const Contact = () => {
         badge="Get in Touch"
         title={<>Contact <span className="text-secondary">Us</span></>}
         description="Have questions or want to get involved? We'd love to hear from you."
+        backgroundImage={contactCartoon}
       />
 
       <section className="section-padding">
