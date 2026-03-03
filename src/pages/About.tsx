@@ -40,27 +40,27 @@ const About = () => {
               <ScrollReveal direction="left">
                 <div className="relative">
                   <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl" />
-                  <div className="bg-card border border-border/50 rounded-[4rem] p-12 md:p-16 shadow-2xl relative overflow-hidden group">
+                  <div className="bg-card border border-border/50 rounded-[3rem] p-10 md:p-14 shadow-2xl relative overflow-hidden group">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/10 transition-colors" />
-                    <Target size={48} className="text-primary mb-8" />
-                    <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight">
+                    <Target size={40} className="text-primary mb-6" />
+                    <h2 className="text-3xl md:text-4xl font-black mb-6 leading-tight">
                       Our <span className="text-primary">Mission</span>
                     </h2>
-                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-6 font-medium italic">
+                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6 font-medium italic">
                       "Empower dyslexic children through creating awareness and advocating for dyslexia friendly-education."
                     </p>
-                    <div className="w-20 h-2 bg-primary rounded-full" />
+                    <div className="w-16 h-1.5 bg-primary rounded-full" />
                   </div>
                 </div>
               </ScrollReveal>
             </div>
             <div className="lg:col-span-5 lg:-ml-20 z-10">
               <ScrollReveal direction="right" delay={0.2}>
-                <div className="bg-secondary rounded-[3rem] p-12 text-secondary-foreground shadow-2xl relative">
+                <div className="bg-secondary rounded-[2.5rem] p-10 text-secondary-foreground shadow-2xl relative">
                   <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-white/10 rounded-full blur-2xl" />
-                  <Eye size={40} className="mb-6 opacity-80" />
-                  <h3 className="text-3xl font-black mb-6">Our Vision</h3>
-                  <p className="text-xl leading-relaxed opacity-90">
+                  <Eye size={36} className="mb-5 opacity-80" />
+                  <h3 className="text-2xl font-black mb-4">Our Vision</h3>
+                  <p className="text-lg leading-relaxed opacity-90">
                     Equal opportunities in education for dyslexic children across every region of Tanzania.
                   </p>
                 </div>
@@ -94,9 +94,9 @@ const About = () => {
                       <span className="text-primary-foreground font-black text-xs">{milestone.year}</span>
                     </div>
                     <div className="flex-1 w-full md:px-12">
-                      <div className="bg-card p-8 rounded-[2.5rem] border border-border shadow-lg hover:shadow-2xl transition-all duration-500">
-                        <h4 className="text-2xl font-black mb-3 text-primary">{milestone.title}</h4>
-                        <p className="text-muted-foreground leading-relaxed">{milestone.description}</p>
+                      <div className="bg-card p-6 md:p-8 rounded-[2rem] border border-border shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <h4 className="text-xl font-black mb-2 text-primary">{milestone.title}</h4>
+                        <p className="text-muted-foreground text-sm leading-relaxed">{milestone.description}</p>
                       </div>
                     </div>
                   </div>
@@ -130,12 +130,12 @@ const About = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10">
                 {values.map((v, i) => (
                   <ScrollReveal key={v.title} delay={i * 0.1}>
-                    <div className={`group bg-card p-10 rounded-[3rem] border border-border/50 shadow-xl hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-700 h-full flex flex-col items-center text-center ${i % 2 !== 0 ? 'sm:mt-10' : ''}`}>
-                      <div className={`w-20 h-20 rounded-[2rem] flex items-center justify-center mb-8 rotate-3 group-hover:rotate-12 transition-all duration-500 ${v.bg} ${v.color}`}>
-                        <v.icon size={36} />
+                    <div className={`group bg-card p-8 rounded-[2.5rem] border border-border/50 shadow-xl hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-700 h-full flex flex-col items-center text-center ${i % 2 !== 0 ? 'sm:mt-8' : ''}`}>
+                      <div className={`w-16 h-16 rounded-[1.5rem] flex items-center justify-center mb-6 rotate-3 group-hover:rotate-12 transition-all duration-500 ${v.bg} ${v.color}`}>
+                        <v.icon size={28} />
                       </div>
-                      <h3 className="text-2xl font-black mb-4">{v.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed">{v.description}</p>
+                      <h3 className="text-xl font-black mb-3">{v.title}</h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{v.description}</p>
                     </div>
                   </ScrollReveal>
                 ))}
@@ -153,16 +153,16 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
             <ScrollReveal direction="left">
               <div className="relative group">
-                <div className="absolute -inset-4 bg-primary rounded-[4rem] opacity-20 group-hover:opacity-30 transition-opacity blur-2xl" />
-                <div className="relative rounded-[3.5rem] overflow-hidden shadow-2xl aspect-[4/5]">
+                <div className="absolute -inset-4 bg-primary rounded-[3rem] opacity-20 group-hover:opacity-30 transition-opacity blur-2xl" />
+                <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5]">
                   <img
                     src={founderImg}
                     alt="Caudence Ayoti"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 p-10 bg-gradient-to-t from-black via-black/20 to-transparent">
-                    <p className="text-white text-3xl font-black mb-1">Caudence Ayoti</p>
-                    <p className="text-primary font-bold uppercase tracking-widest text-sm italic">Founder & Visionary</p>
+                  <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black via-black/20 to-transparent">
+                    <p className="text-white text-2xl font-black mb-1">Caudence Ayoti</p>
+                    <p className="text-primary font-bold uppercase tracking-widest text-xs italic">Founder & Visionary</p>
                   </div>
                 </div>
               </div>
@@ -202,29 +202,29 @@ const About = () => {
       <section className="section-padding">
         <div className="container-wide">
           <ScrollReveal>
-            <div className="bg-primary rounded-[4rem] p-12 md:p-24 text-center relative overflow-hidden group">
+            <div className="bg-primary rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden group">
               {/* Animated Decorations */}
               <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-110 transition-transform duration-1000" />
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 rounded-full translate-y-1/2 -translate-x-1/2" />
 
               <div className="relative z-10 max-w-3xl mx-auto">
-                <HandHeart size={64} className="text-primary-foreground mx-auto mb-10 opacity-80" />
-                <h2 className="text-4xl md:text-7xl font-black text-primary-foreground mb-10 tracking-tight leading-tight">
+                <HandHeart size={56} className="text-primary-foreground mx-auto mb-8 opacity-80" />
+                <h2 className="text-3xl md:text-5xl font-black text-primary-foreground mb-8 tracking-tight leading-tight">
                   Be the Catalyst <span className="text-hope-yellow">for Change</span>
                 </h2>
-                <p className="text-primary-foreground/80 text-xl md:text-2xl mb-12 leading-relaxed">
+                <p className="text-primary-foreground/80 text-lg md:text-xl mb-10 leading-relaxed">
                   Your support fuels early intervention, teacher training, and policy shifts. Every donation transforms a child's educational future.
                 </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
                   <Link
                     to="/donate"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white text-primary font-black px-12 py-6 rounded-full hover:bg-hope-yellow transition-all shadow-2xl text-lg uppercase tracking-widest group"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white text-primary font-black px-10 py-5 rounded-full hover:bg-hope-yellow transition-all shadow-2xl text-base uppercase tracking-widest group"
                   >
-                    Donate Now <Heart size={20} className="group-hover:scale-125 transition-transform" />
+                    Donate Now <Heart size={18} className="group-hover:scale-125 transition-transform" />
                   </Link>
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-primary-foreground/10 text-primary-foreground font-black px-12 py-6 rounded-full hover:bg-white/10 transition-all border border-white/20 text-lg uppercase tracking-widest"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-primary-foreground/10 text-primary-foreground font-black px-10 py-5 rounded-full hover:bg-white/10 transition-all border border-white/20 text-base uppercase tracking-widest"
                   >
                     Join Our Team
                   </Link>
