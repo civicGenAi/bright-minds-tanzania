@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Quick Links</h4>
             <div className="flex flex-col gap-2">
-              {["About Us", "Projects", "News", "Contact"].map((item) => (
+              {["About Us", "Projects", "News", "FAQ", "Contact"].map((item) => (
                 <Link
                   key={item}
                   to={`/${item.toLowerCase().replace(" ", "-")}`}
@@ -32,10 +32,10 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Get Involved</h4>
             <div className="flex flex-col gap-2 text-sm opacity-70">
-              <span>Volunteer With Us</span>
-              <span>Become a Member</span>
-              <span>Partner With Us</span>
-              <span>Make a Donation</span>
+              <Link to="/contact" className="hover:opacity-100 transition-opacity">Volunteer With Us</Link>
+              <Link to="/contact" className="hover:opacity-100 transition-opacity">Become a Member</Link>
+              <Link to="/contact" className="hover:opacity-100 transition-opacity">Partner With Us</Link>
+              <Link to="/donate" className="hover:opacity-100 transition-opacity">Make a Donation</Link>
             </div>
           </div>
 
@@ -49,6 +49,10 @@ const Footer = () => {
               <div className="flex items-center gap-2">
                 <Phone size={16} />
                 <span>+255 123 456 789</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <MapPin size={16} className="shrink-0 mt-0.5" />
+                <span>Tanzanite Street, House No. 13, Arusha Tanzania</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin size={16} />
