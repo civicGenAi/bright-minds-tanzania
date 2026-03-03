@@ -88,8 +88,8 @@ const Contact = () => {
                   <div className="space-y-4">
                     {[
                       { icon: Mail, label: "Email", value: "info@dyslexiatanzania.org" },
-                      { icon: Phone, label: "Phone", value: "+255 123 456 789" },
-                      { icon: MapPin, label: "Location", value: "Dar es Salaam, Tanzania" },
+                      { icon: Phone, label: "Phone", value: "+255 688 535 848" },
+                      { icon: MapPin, label: "Location", value: "Tanzanite street, House Number 13, Arusha, Tanzania." },
                     ].map((item) => (
                       <div key={item.label} className="flex items-start gap-3 group">
                         <div className="bg-primary/10 w-10 h-10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">

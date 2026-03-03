@@ -45,7 +45,18 @@ const stories = [
 
 const ImpactStoriesSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [cardsPerView, setCardsPerView] = useState(3);
+
+  useEffect(() => {
+    const updateCardsPerView = () => {
+      if (window.innerWidth < 768) setCardsPerView(1);
+      else if (window.innerWidth < 1024) setCardsPerView(2);
+      else setCardsPerView(3);
+    };
+    updateCardsPerView();
+    window.addEventListener("resize", updateCardsPerView);
+    return () => window.removeEventListener("resize", updateCardsPerView);
+  }, []);
 
   const next = () => {
     setCurrentIndex((prev) => (prev + 1) % stories.length);
@@ -59,6 +70,9 @@ const ImpactStoriesSection = () => {
     const timer = setInterval(next, 5000);
     return () => clearInterval(timer);
   }, []);
+
+  // To make it infinite and smooth, we'll duplicate the items
+  const displayStories = [...stories, ...stories, ...stories];
 
   return (
     <section className="section-padding bg-muted/30 overflow-hidden relative">
@@ -77,18 +91,18 @@ const ImpactStoriesSection = () => {
             <div className="flex items-center gap-4">
               <button
                 onClick={prev}
-                className="w-14 h-14 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all group"
+                className="w-12 h-12 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all group"
               >
-                <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+                <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
               </button>
               <button
                 onClick={next}
-                className="w-14 h-14 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all group"
+                className="w-12 h-12 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all group"
               >
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
-              <Link to="/news" className="hidden sm:inline-flex items-center gap-3 bg-foreground text-background font-black px-8 py-4 rounded-2xl hover:bg-primary hover:text-primary-foreground transition-all uppercase tracking-widest text-xs ml-4 shadow-lg">
-                View All <MoveRight size={16} />
+              <Link to="/news" className="hidden sm:inline-flex items-center gap-3 bg-foreground text-background font-black px-6 py-3 rounded-xl hover:bg-primary hover:text-primary-foreground transition-all uppercase tracking-widest text-[10px] ml-4 shadow-lg">
+                View All <MoveRight size={14} />
               </Link>
             </div>
           </div>
@@ -96,13 +110,13 @@ const ImpactStoriesSection = () => {
 
         <div className="relative group/slider">
           <motion.div
-            className="flex gap-8"
-            animate={{ x: `-${currentIndex * 33.333}%` }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            style={{ width: `${(stories.length / 3) * 100}%` }}
+            className="flex gap-6"
+            animate={{ x: `calc(-${currentIndex + stories.length} * (100% / ${cardsPerView}))` }}
+            transition={{ type: "spring", stiffness: 200, damping: 25, mass: 0.5 }}
+            style={{ width: "100%" }}
           >
-            {stories.map((story) => (
-              <div key={story.id} className="w-full md:w-[450px] shrink-0">
+            {displayStories.map((story, idx) => (
+              <div key={`${story.id}-${idx}`} style={{ width: `calc(100% / ${cardsPerView} - (24px * (${cardsPerView} - 1) / ${cardsPerView}))` }} className="shrink-0">
                 <ScrollReveal>
                   <article className="bg-card rounded-[2rem] overflow-hidden border border-border/50 hover:border-primary/20 transition-all duration-700 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] h-full flex flex-col group/card">
                     <div className="relative h-72 overflow-hidden">

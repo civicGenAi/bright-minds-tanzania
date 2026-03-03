@@ -48,15 +48,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={16} />
-                <span>+255 123 456 789</span>
+                <span>+255 688 535 848</span>
               </div>
               <div className="flex items-start gap-2">
                 <MapPin size={16} className="shrink-0 mt-0.5" />
-                <span>Tanzanite Street, House No. 13, Arusha Tanzania</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin size={16} />
-                <span>Dar es Salaam, Tanzania</span>
+                <span>Tanzanite street, House Number 13, Arusha, Tanzania.</span>
               </div>
             </div>
           </div>
