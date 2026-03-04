@@ -115,7 +115,7 @@
   }
 
   .section-padding {
-    @apply px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+    @apply px-4 sm:px-6 lg:px-8 py-12 md:py-20 lg:py-24;
   }
 
   .container-wide {
@@ -133,10 +133,37 @@
   .hero-gradient {
     background: linear-gradient(135deg, hsl(var(--deep-navy) / 0.85), hsl(var(--primary) / 0.7));
   }
+
+  /* Mobile-first card radius */
+  .card-radius {
+    @apply rounded-xl md:rounded-2xl lg:rounded-3xl;
+  }
+
+  .card-radius-lg {
+    @apply rounded-2xl md:rounded-[2rem] lg:rounded-[2.5rem];
+  }
+
+  .card-radius-xl {
+    @apply rounded-2xl md:rounded-[2.5rem] lg:rounded-[3rem];
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+/* Smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Better touch targets on mobile */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
   }
 }
