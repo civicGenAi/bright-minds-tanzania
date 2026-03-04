@@ -4,39 +4,34 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 const CTASection = () => {
   return (
-    <section className="section-padding py-32 bg-background relative overflow-hidden">
-      {/* Decorative Aura */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_120%,rgba(var(--primary-rgb),0.1),transparent_70%)]" />
-
+    <section className="section-padding py-16 md:py-32 bg-background relative overflow-hidden">
       <div className="container-wide relative z-10 text-center">
         <ScrollReveal>
-          <div className="bg-foreground text-background rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden group">
-            {/* Background Texture */}
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] pointer-events-none" />
-            <div className="absolute -top-32 -right-32 w-96 h-96 bg-primary/20 rounded-full blur-[100px] group-hover:scale-150 transition-transform duration-1000" />
-            <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-secondary/20 rounded-full blur-[100px]" />
+          <div className="bg-foreground text-background rounded-2xl md:rounded-[2.5rem] p-6 md:p-16 relative overflow-hidden group">
+            <div className="absolute -top-32 -right-32 w-64 md:w-96 h-64 md:h-96 bg-primary/20 rounded-full blur-[80px] group-hover:scale-150 transition-transform duration-1000" />
+            <div className="absolute -bottom-32 -left-32 w-64 md:w-96 h-64 md:h-96 bg-secondary/20 rounded-full blur-[80px]" />
 
             <div className="relative z-10 max-w-4xl mx-auto">
-              <Sparkles size={48} className="text-primary mx-auto mb-10 group-hover:rotate-12 transition-transform" />
-              <h2 className="text-3xl md:text-6xl font-black mb-8 leading-[1.1] tracking-tighter">
+              <Sparkles size={36} className="text-primary mx-auto mb-6 md:mb-10" />
+              <h2 className="text-2xl md:text-4xl lg:text-6xl font-black mb-4 md:mb-8 leading-tight tracking-tight">
                 Be the Spark in a <span className="text-primary">Child's Education</span>
               </h2>
-              <p className="text-background/70 text-lg md:text-xl mb-12 leading-relaxed font-medium">
+              <p className="text-background/70 text-sm md:text-xl mb-6 md:mb-12 leading-relaxed">
                 Whether you're a parent seeking support, an educator looking for training, or a champion for children's rights — your journey starts here.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-6">
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-12 py-6 rounded-2xl font-black uppercase tracking-widest text-sm hover:shadow-[0_20px_40px_rgba(var(--primary-rgb),0.4)] hover:scale-105 transition-all group"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 md:px-12 py-4 md:py-6 rounded-xl md:rounded-2xl font-black uppercase tracking-widest text-xs md:text-sm hover:scale-105 transition-all"
                 >
-                  Join the Community <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                  Join the Community <ArrowRight size={18} />
                 </Link>
                 <Link
                   to="/donate"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white/10 text-white backdrop-blur-md border border-white/20 px-12 py-6 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-white hover:text-black transition-all group"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 text-white backdrop-blur-md border border-white/20 px-8 md:px-12 py-4 md:py-6 rounded-xl md:rounded-2xl font-black uppercase tracking-widest text-xs md:text-sm hover:bg-white hover:text-black transition-all"
                 >
-                  <Heart size={20} className="group-hover:scale-125 transition-transform fill-transparent hover:fill-current" /> Donate Now
+                  <Heart size={18} /> Donate Now
                 </Link>
               </div>
             </div>

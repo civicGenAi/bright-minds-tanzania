@@ -12,6 +12,9 @@ import News from "./pages/News";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import Donate from "./pages/Donate";
+import Volunteer from "./pages/Volunteer";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
@@ -32,6 +35,9 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/donate" element={<Donate />} />
+          <Route path="/volunteer" element={<Volunteer />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
