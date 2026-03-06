@@ -109,13 +109,31 @@ const ProjectDetail = () => {
                                         <div className="mt-12 p-8 md:p-14 bg-muted/50 rounded-[2.5rem] border border-border/50 text-center relative overflow-hidden group">
                                             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full translate-x-1/2 -translate-y-1/2 group-hover:scale-150 transition-transform duration-700" />
                                             <Trophy size={40} className="mx-auto mb-6 text-secondary" />
-                                            <h3 className="text-xl md:text-3xl font-black mb-4 uppercase font-oswald">Ready to Take Part?</h3>
-                                            <p className="text-muted-foreground mb-10 max-w-md mx-auto">Register now to participate in this impactful event and support our cause.</p>
-                                            <Button asChild size="lg" className="rounded-full px-12 h-16 uppercase tracking-widest font-black text-xs md:text-sm shadow-xl hover:scale-105 transition-all">
-                                                <a href={project.registrationLink} target="_blank" rel="noopener noreferrer">
-                                                    Register Here
-                                                </a>
-                                            </Button>
+                                            {project.status === "Passed Event" ? (
+                                                <>
+                                                    <h3 className="text-xl md:text-3xl font-black mb-4 uppercase font-oswald text-muted-foreground">Registration Closed</h3>
+                                                    <p className="text-muted-foreground mb-10 max-w-md mx-auto italic">
+                                                        This event has passed. Subscribe to our newsletter or follow us on social media to get updates on when the next registration window opens!
+                                                    </p>
+                                                    <Button
+                                                        onClick={() => document.getElementById('newsletter-section')?.scrollIntoView({ behavior: 'smooth' })}
+                                                        size="lg"
+                                                        className="rounded-full px-12 h-16 uppercase tracking-widest font-black text-xs md:text-sm shadow-xl hover:scale-105 transition-all"
+                                                    >
+                                                        Stay Updated
+                                                    </Button>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <h3 className="text-xl md:text-3xl font-black mb-4 uppercase font-oswald">Ready to Take Part?</h3>
+                                                    <p className="text-muted-foreground mb-10 max-w-md mx-auto">Register now to participate in this impactful event and support our cause.</p>
+                                                    <Button asChild size="lg" className="rounded-full px-12 h-16 uppercase tracking-widest font-black text-xs md:text-sm shadow-xl hover:scale-105 transition-all">
+                                                        <a href={project.registrationLink} target="_blank" rel="noopener noreferrer">
+                                                            Register Here
+                                                        </a>
+                                                    </Button>
+                                                </>
+                                            )}
                                         </div>
                                     )}
                                 </div>
@@ -192,7 +210,7 @@ const ProjectDetail = () => {
 
                             <ScrollReveal delay={0.3}>
                                 {/* Newsletter Block */}
-                                <div className="bg-muted/50 border border-border/50 rounded-[2.5rem] p-8 md:p-10 shadow-xl">
+                                <div id="newsletter-section" className="bg-muted/50 border border-border/50 rounded-[2.5rem] p-8 md:p-10 shadow-xl">
                                     <Mail size={32} className="text-primary mb-6" />
                                     <h3 className="text-xl md:text-2xl font-black mb-4 uppercase tracking-tight font-oswald">Stay Informed</h3>
                                     <p className="text-muted-foreground text-sm leading-relaxed mb-8">

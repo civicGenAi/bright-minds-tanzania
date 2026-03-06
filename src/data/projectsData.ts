@@ -84,41 +84,41 @@ Together, let's celebrate and empower every individual.`,
         excerpt: "A comprehensive look at Dyslexia Tanzania's activities, programs, and outreach in 2023.",
         content: `This report presents the activities and findings for Dyslexia Tanzania for the year 2023. It includes data on various programs, performance indicators, and outcomes.
 
-### Key Activities and Programs
+KEY ACTIVITIES AND PROGRAMS
 Throughout 2023, Dyslexia Tanzania conducted several workshops, self awareness talk and media interviews to raise awareness about dyslexia and related conditions such as ADHD and autism.
 
-#### Workshops
-- **May 2023:** Workshop at The Tanganyika Junior School, focusing on awareness about dyslexia.
-- **June 2023:** Workshop at LOHADA School, focusing on awareness about dyslexia.
-- **July 2023:** Workshop at LOHADA School, focusing on awareness about dyslexia.
-- **August 2023:** Workshop at The Tanganyika Early Years School, focusing on awareness about dyslexia, ADHD, and autism.
+WORKSHOPS
+- May 2023: Workshop at The Tanganyika Junior School, focusing on awareness about dyslexia.
+- June 2023: Workshop at LOHADA School, focusing on awareness about dyslexia.
+- July 2023: Workshop at LOHADA School, focusing on awareness about dyslexia.
+- August 2023: Workshop at The Tanganyika Early Years School, focusing on awareness about dyslexia, ADHD, and autism.
 
-#### Media Interviews
-- **March 2023:** Radio Interview at Impact Radio
-- **September 2023:** Radio interview at Idea Radio, N point News, DW and TBC
-- **October 2023:** Hope Media, Radio 5
+MEDIA INTERVIEWS
+- March 2023: Radio Interview at Impact Radio
+- September 2023: Radio interview at Idea Radio, N point News, DW and TBC
+- October 2023: Hope Media, Radio 5
 
-#### Events
-- **October 2023:** Launching Dyslexia Tanzania and creating awareness about Dyslexia.
+EVENTS
+- October 2023: Launching Dyslexia Tanzania and creating awareness about Dyslexia.
 
-### Places Reached
-- **Arusha:** Workshops conducted at The Tanganyika Junior School, LOHADA School, and The Tanganyika Early Years School.
-- **Nationwide:** Media interviews reached a nationwide audience.
+PLACES REACHED
+- Arusha: Workshops conducted at The Tanganyika Junior School, LOHADA School, and The Tanganyika Early Years School.
+- Nationwide: Media interviews reached a nationwide audience.
 
-### IMPACT SNAPSHOT
-- **1,000,000:** Approximately Number of people reached on all media interviews conducted.
-- **10:** Number of Parents Reached.
-- **101:** Number of Other People Reached.
-- **200:** Number of Students Reached.
-- **153:** Number of Teachers Reached.
+IMPACT SNAPSHOT
+- 1,000,000: Approximately Number of people reached on all media interviews conducted.
+- 10: Number of Parents Reached.
+- 101: Number of Other People Reached.
+- 200: Number of Students Reached.
+- 153: Number of Teachers Reached.
 
-### Success & Challenges
+SUCCESS & CHALLENGES
 - Launched Dyslexia Tanzania.
 - Testimonies on how workshops have opened eyes on learning difficulties.
 - Partnerships & Collaboration.
 - Raised self-esteem, self-awareness & confidence.
 
-**Challenges:**
+CHALLENGES
 - Lack of support as a new venture.
 - Limited resources to conduct workshops and events.
 - Lack of funding.`,
