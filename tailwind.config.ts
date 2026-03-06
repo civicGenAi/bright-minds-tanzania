@@ -14,6 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
+        oswald: ["Oswald", "sans-serif"],
+        lato: ["Lato", "sans-serif"],
         outfit: ["Outfit", "sans-serif"],
       },
       colors: {
@@ -50,6 +52,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        "brand-red": "hsl(var(--brand-red))",
+        "brand-orange": "hsl(var(--brand-orange))",
+        "brand-green": "hsl(var(--brand-green))",
+        "brand-blue": "hsl(var(--brand-blue))",
         "warm-orange": "hsl(var(--warm-orange))",
         "hope-yellow": "hsl(var(--hope-yellow))",
         "sky-blue": "hsl(var(--sky-blue))",

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Lato:wght@300;400;700;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,32 +15,36 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 50% 15%;
 
-    --primary: 210 65% 38%;
+    --primary: 204 74% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 38 92% 55%;
-    --secondary-foreground: 215 50% 15%;
+    --secondary: 32 91% 55%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 210 20% 95%;
     --muted-foreground: 215 15% 45%;
 
-    --accent: 38 92% 55%;
+    --accent: 32 91% 55%;
     --accent-foreground: 215 50% 15%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 73% 51%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 210 20% 90%;
     --input: 210 20% 90%;
-    --ring: 210 65% 38%;
+    --ring: 204 74% 45%;
 
     --radius: 0.75rem;
 
-    /* Custom tokens */
-    --warm-orange: 25 90% 52%;
-    --hope-yellow: 42 95% 58%;
-    --sky-blue: 200 70% 55%;
-    --leaf-green: 145 55% 42%;
+    /* Brand tokens */
+    --brand-red: 0 73% 51%;
+    --brand-orange: 32 91% 55%;
+    --brand-green: 136 60% 42%;
+    --brand-blue: 204 74% 45%;
+    --warm-orange: 32 91% 55%;
+    --hope-yellow: 32 91% 55%;
+    --sky-blue: 204 74% 45%;
+    --leaf-green: 136 60% 42%;
     --deep-navy: 215 60% 18%;
     --soft-cream: 40 40% 96%;
     --hero-overlay: 215 60% 18%;
@@ -65,16 +69,16 @@
     --popover: 215 45% 12%;
     --popover-foreground: 40 33% 96%;
 
-    --primary: 200 70% 55%;
+    --primary: 204 74% 55%;
     --primary-foreground: 215 50% 8%;
 
-    --secondary: 38 92% 55%;
+    --secondary: 32 91% 55%;
     --secondary-foreground: 215 50% 8%;
 
     --muted: 215 30% 18%;
     --muted-foreground: 210 15% 60%;
 
-    --accent: 38 92% 55%;
+    --accent: 32 91% 55%;
     --accent-foreground: 215 50% 8%;
 
     --destructive: 0 62.8% 30.6%;
@@ -82,7 +86,7 @@
 
     --border: 215 30% 20%;
     --input: 215 30% 20%;
-    --ring: 200 70% 55%;
+    --ring: 204 74% 55%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -101,11 +105,11 @@
   }
 
   body {
-    @apply bg-background text-foreground font-outfit antialiased;
+    @apply bg-background text-foreground font-lato antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-outfit font-bold tracking-tight;
+    @apply font-oswald font-bold tracking-tight;
   }
 }
 
@@ -134,7 +138,6 @@
     background: linear-gradient(135deg, hsl(var(--deep-navy) / 0.85), hsl(var(--primary) / 0.7));
   }
 
-  /* Mobile-first card radius */
   .card-radius {
     @apply rounded-xl md:rounded-2xl lg:rounded-3xl;
   }
@@ -154,16 +157,14 @@
   }
 }
 
-/* Smooth scrolling for the whole page */
 html {
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Better touch targets on mobile */
+/* Mobile touch targets */
 @media (max-width: 768px) {
   button, a {
     min-height: 44px;
-    min-width: 44px;
   }
 }
