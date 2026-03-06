@@ -1,5 +1,6 @@
 import ScrollReveal from "@/components/ScrollReveal";
-import communityImg from "@/assets/community.png";
+import inspirationImg from "@/assets/inspiration.png";
+import { motion } from "framer-motion";
 
 const EmbraceDyslexiaSection = () => {
   return (
@@ -15,25 +16,66 @@ const EmbraceDyslexiaSection = () => {
                 Embrace <span className="text-primary">Dyslexia</span>
               </h2>
               <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-3">
-                It is important to understand that dyslexia is not a sign of laziness or lack of intelligence, 
+                It is important to understand that dyslexia is not a sign of laziness or lack of intelligence,
                 but rather a learning difference that requires a different approach to teaching.
               </p>
               <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                Early identification and intervention can be critical in helping dyslexic individuals 
+                Early identification and intervention can be critical in helping dyslexic individuals
                 to overcome challenges and reach their full potential.
               </p>
             </div>
           </ScrollReveal>
 
           <ScrollReveal direction="right" delay={0.2}>
-            <div className="relative">
-              <div className="absolute top-3 md:top-8 right-0 bottom-0 left-3 md:left-8 bg-primary rounded-xl md:rounded-3xl" />
-              <div className="absolute -bottom-4 -right-4 w-16 h-16 rounded-full border-4 border-secondary opacity-30 hidden md:block" />
-              <img
-                src={communityImg}
-                alt="Community support for dyslexic children in Tanzania"
-                className="relative z-10 rounded-xl md:rounded-2xl shadow-2xl w-full aspect-[3/4] md:aspect-[4/3] object-cover"
-              />
+            <div className="relative flex items-center justify-center p-4">
+              {/* Styled Animation at the back */}
+              <div className="absolute inset-0 z-0">
+                <motion.div
+                  animate={{
+                    scale: [1, 1.1, 1],
+                    rotate: [0, 5, 0],
+                    opacity: [0.1, 0.2, 0.1]
+                  }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/20 rounded-full blur-3xl px-8"
+                />
+                <motion.div
+                  animate={{
+                    scale: [1.1, 1, 1.1],
+                    rotate: [0, -5, 0],
+                    opacity: [0.1, 0.15, 0.1]
+                  }}
+                  transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-secondary/10 rounded-full blur-2xl"
+                />
+              </div>
+
+              {/* Image Container */}
+              <div className="relative z-10 w-full group">
+                <div className="absolute -top-4 -left-4 w-12 md:w-20 h-12 md:h-20 border-t-4 border-l-4 border-secondary rounded-tl-2xl z-20 transition-all group-hover:-top-6 group-hover:-left-6" />
+                <div className="absolute -bottom-4 -right-4 w-12 md:w-20 h-12 md:h-20 border-b-4 border-r-4 border-primary rounded-br-2xl z-20 transition-all group-hover:-bottom-6 group-hover:-right-6" />
+
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.5 }}
+                  className="overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl border border-white/10"
+                >
+                  <img
+                    src={inspirationImg}
+                    alt="Inspiration for Dyslexia Support"
+                    className="w-full aspect-[3/4] md:aspect-[4/3] object-cover"
+                  />
+                </motion.div>
+
+                {/* Floating Elements */}
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -top-8 right-10 bg-white/10 backdrop-blur-md p-2 rounded-lg border border-white/20 hidden md:block"
+                >
+                  <span className="text-[10px] font-bold text-white uppercase tracking-widest">Inspiration</span>
+                </motion.div>
+              </div>
             </div>
           </ScrollReveal>
         </div>

@@ -89,15 +89,6 @@ const HeroSection = () => {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               >
-                {/* Badge - compact on mobile */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 md:py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 mb-4 md:mb-8">
-                  <motion.div animate={{ rotate: 360 }} transition={{ duration: 4, repeat: Infinity, ease: "linear" }}>
-                    <Star size={12} className="text-secondary fill-secondary" />
-                  </motion.div>
-                  <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.15em] text-white/90 font-oswald">
-                    {slide.subtitle}
-                  </span>
-                </div>
 
                 {/* Title - optimized for mobile readability */}
                 <h1 className="text-[1.75rem] leading-[1.1] sm:text-3xl md:text-5xl lg:text-6xl font-black text-white md:leading-[0.95] mb-3 md:mb-6 font-oswald tracking-tight">

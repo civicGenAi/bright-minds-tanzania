@@ -2,7 +2,7 @@ import { Target, Eye, Heart, Users, HandHeart, Zap, Sparkles, Award } from "luci
 import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
 import PageHero from "@/components/PageHero";
-import founderImg from "@/assets/founder.jpg";
+import founderImg from "@/assets/founder.png";
 import aboutCartoon from "@/assets/nav/aboutus-cartoon.png";
 import SEO from "@/components/SEO";
 
@@ -138,44 +138,65 @@ const About = () => {
         </div>
       </section>
 
-      {/* Founder */}
-      <section className="section-padding bg-muted/20 relative">
-        <div className="container-wide relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center max-w-6xl mx-auto">
-            <ScrollReveal direction="left">
-              <div className="relative group">
-                <div className="absolute -inset-3 bg-primary rounded-2xl md:rounded-[3rem] opacity-20 blur-xl hidden md:block" />
-                <div className="relative rounded-2xl md:rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5]">
-                  <img src={founderImg} alt="Caudence Ayoti" className="w-full h-full object-cover" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8 bg-gradient-to-t from-black via-black/20 to-transparent">
-                    <p className="text-white text-lg md:text-2xl font-black mb-0.5">Caudence Ayoti</p>
-                    <p className="text-primary font-bold uppercase tracking-widest text-[10px] md:text-xs italic">Founder & Visionary</p>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
+      <section className="section-padding relative overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute top-1/2 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-x-1/2" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
 
-            <ScrollReveal direction="right">
-              <div>
-                <Award size={36} className="text-secondary mb-4 md:mb-8" />
-                <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-foreground mb-4 md:mb-8">From Pain to <span className="text-primary">Purpose</span></h2>
-                <div className="space-y-4 text-sm md:text-xl text-muted-foreground leading-relaxed">
-                  <p>Caudence Ayoti founded Dyslexia Tanzania driven by a deep belief that every child can succeed when given the right tools.</p>
-                  <p>"Our goal is not just to teach children to read, but to help them discover that their different way of thinking is actually their greatest strength."</p>
-                  <div className="flex items-center gap-6 pt-4">
-                    <div className="text-center">
-                      <p className="text-2xl md:text-3xl font-black text-foreground">15+</p>
-                      <p className="text-[10px] md:text-xs font-bold uppercase text-muted-foreground tracking-widest">Awards</p>
-                    </div>
-                    <div className="w-px h-10 bg-border" />
-                    <div className="text-center">
-                      <p className="text-2xl md:text-3xl font-black text-foreground">10k+</p>
-                      <p className="text-[10px] md:text-xs font-bold uppercase text-muted-foreground tracking-widest">Impacted</p>
+        <div className="container-wide relative z-10">
+          <div className="bg-card border border-border/50 rounded-[2.5rem] md:rounded-[4rem] p-8 md:p-16 shadow-2xl max-w-6xl mx-auto overflow-hidden relative">
+            <div className="grid lg:grid-cols-[200px_1fr] md:grid-cols-[250px_1fr] gap-8 md:gap-16 items-center">
+              <ScrollReveal direction="left">
+                <div className="relative group mx-auto">
+                  <div className="absolute -inset-4 bg-primary/20 rounded-full blur-xl group-hover:bg-primary/30 transition-all" />
+                  <div className="relative w-40 h-40 md:w-56 md:h-56 rounded-full border-8 border-white shadow-2xl overflow-hidden bg-muted">
+                    <img src={founderImg} alt="Caudence Ayoti" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  </div>
+                  <div className="absolute -bottom-2 right-4 bg-secondary text-secondary-foreground px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">
+                    Founder
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal direction="right">
+                <div className="relative">
+                  <Award size={48} className="text-secondary/20 absolute -top-10 -right-4 md:-top-16 md:right-0 opacity-50" />
+                  <h2 className="text-2xl md:text-5xl font-black text-foreground mb-6 leading-tight">
+                    From Pain to <span className="text-primary italic">Purpose</span>
+                  </h2>
+                  <div className="space-y-6">
+                    <p className="text-base md:text-2xl font-medium text-muted-foreground leading-relaxed italic border-l-4 border-primary/30 pl-6">
+                      "Our goal is not just to teach children to read, but to help them discover that their different way of thinking is actually their greatest strength."
+                    </p>
+                    <p className="text-sm md:text-lg text-muted-foreground leading-relaxed">
+                      Caudence Ayoti founded Dyslexia Tanzania driven by a deep belief that every child can succeed when given the right tools and understanding.
+                    </p>
+
+                    <div className="flex flex-wrap items-center gap-6 md:gap-12 pt-6">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                          <Award size={24} className="text-primary" />
+                        </div>
+                        <div>
+                          <p className="text-xl md:text-2xl font-black text-foreground">15+</p>
+                          <p className="text-[10px] font-bold uppercase text-muted-foreground tracking-widest">Awards</p>
+                        </div>
+                      </div>
+                      <div className="w-px h-12 bg-border hidden sm:block" />
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center">
+                          <Users size={24} className="text-secondary" />
+                        </div>
+                        <div>
+                          <p className="text-xl md:text-2xl font-black text-foreground">10k+</p>
+                          <p className="text-[10px] font-bold uppercase text-muted-foreground tracking-widest">Impacted</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
+            </div>
           </div>
         </div>
       </section>

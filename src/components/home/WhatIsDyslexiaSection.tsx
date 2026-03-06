@@ -1,6 +1,8 @@
 import { Brain, Eye, BookOpen, Lightbulb } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
-import heroReading from "@/assets/hero-reading.jpg";
+import about1 from "@/assets/about1.png";
+import about2 from "@/assets/about2.png";
+import { motion } from "framer-motion";
 
 const facts = [
   { icon: Brain, title: "Neurological Difference", description: "Dyslexia is a brain-based learning difference that affects reading, writing, and spelling." },
@@ -14,19 +16,48 @@ const WhatIsDyslexiaSection = () => {
     <section className="section-padding bg-muted/50">
       <div className="container-wide">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
-          <ScrollReveal direction="left">
-            <div className="relative">
+          <div className="relative pt-12 pb-12 pr-12 lg:pr-16">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative z-0"
+            >
               <img
-                src={heroReading}
-                alt="Child reading a book"
-                className="rounded-xl md:rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
+                src={about1}
+                alt="Understanding Dyslexia 1"
+                className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
               />
-              <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-secondary rounded-xl md:rounded-2xl p-3 md:p-5 shadow-lg">
-                <p className="text-2xl md:text-3xl font-extrabold text-secondary-foreground">10%</p>
-                <p className="text-[10px] md:text-sm font-medium text-secondary-foreground/80">globally affected</p>
-              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, x: 30 }}
+              whileInView={{ opacity: 1, scale: 1, x: 0 }}
+              viewport={{ once: true }}
+              animate={{
+                y: [0, -15, 0],
+                rotate: [0, 2, 0]
+              }}
+              transition={{
+                duration: 1,
+                delay: 0.3,
+                y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+                rotate: { duration: 7, repeat: Infinity, ease: "easeInOut" }
+              }}
+              className="absolute -top-4 -right-4 md:-top-10 md:-right-10 w-[60%] z-10"
+            >
+              <img
+                src={about2}
+                alt="Understanding Dyslexia 2"
+                className="rounded-2xl shadow-2xl border-4 border-white object-cover aspect-square"
+              />
+            </motion.div>
+
+            <div className="absolute -bottom-4 -left-4 md:-bottom-4 md:-left-8 bg-secondary rounded-xl md:rounded-2xl p-3 md:p-5 shadow-lg z-20">
+              <p className="text-2xl md:text-3xl font-extrabold text-secondary-foreground">10%</p>
+              <p className="text-[10px] md:text-sm font-medium text-secondary-foreground/80">globally affected</p>
             </div>
-          </ScrollReveal>
+          </div>
 
           <div>
             <ScrollReveal>
@@ -35,7 +66,7 @@ const WhatIsDyslexiaSection = () => {
                 What is <span className="text-primary">Dyslexia?</span>
               </h2>
               <p className="text-muted-foreground text-sm md:text-lg leading-relaxed mb-6 md:mb-8">
-                Dyslexia is a common learning difference that primarily affects reading and language-related skills. 
+                Dyslexia is a common learning difference that primarily affects reading and language-related skills.
                 It is not a sign of low intelligence — many of the world's greatest innovators are dyslexic.
               </p>
             </ScrollReveal>
