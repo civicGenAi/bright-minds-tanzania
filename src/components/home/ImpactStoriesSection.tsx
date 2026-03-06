@@ -2,7 +2,7 @@ import { Calendar, ArrowRight, Zap, ArrowLeft, MoveRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const stories = [
   {
@@ -60,13 +60,13 @@ const ImpactStoriesSection = () => {
 
   const maxIndex = Math.max(0, stories.length - cardsPerView);
 
-  const next = () => setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+  const next = useCallback(() => setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1)), [maxIndex]);
   const prev = () => setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
 
   useEffect(() => {
     const timer = setInterval(next, 5000);
     return () => clearInterval(timer);
-  }, [maxIndex]);
+  }, [maxIndex, next]);
 
   const cardWidth = 100 / cardsPerView;
   const gapPx = cardsPerView === 1 ? 0 : 16;
